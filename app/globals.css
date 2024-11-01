@@ -8,5 +8,244 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Estilo para o spinner */
+.loader { 
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  z-index: 2; /* Aumente o z-index para que o spinner fique acima das camadas */
+}
 
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+
+@keyframes rotationBack {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Estilos para as camadas de carregamento */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.left-panel, .right-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #000;
+  z-index: 1;
+  transition: transform 1s ease;
+}
+
+/* Movendo as camadas para os lados ao final do carregamento */
+.left-panel {
+  left: 0;
+  transform: translateX(0);
+}
+.right-panel {
+  right: 0;
+  transform: translateX(0);
+}
+
+.loading-screen .left-panel.fade-out {
+  transform: translateX(-100%);
+}
+
+.loading-screen .right-panel.fade-out {
+  transform: translateX(100%);
+}
+
+/* Controlando visibilidade do conteúdo */
+.invisible-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in;
+}
+
+
+/* Estilo geral do botão */
+.btn-1 {
+  position: relative;
+  display: inline-block;
+  padding: 11px 24px;
+  font-weight: 100;
+  font-size: 16px;
+  color: #fff;
+  background: #f0461a; /* Cor inicial do botão */
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.35s ease;
+}
+
+/* Estilos para o texto e a posição do SVG */
+.btn-1 span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-1 svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  z-index: 0;
+}
+
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-1:hover {
+  background: rgba(179, 0, 0, 0); /* Torna o fundo transparente */
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Remove o scroll horizontal na página inteira */
+html, body {
+  overflow-x: hidden;
+}
+
+
+/// scrolltop ///
+
+.bg-primary {
+  background-color: #ff6600; /* cor principal */
+}
+
+.bg-primary-dark {
+  background-color: #e05500; /* cor mais escura para hover */
+}
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.transition {
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 108px;
+  height: 108px;
+  background: #f0461a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  animation: animloader 4s ease-in infinite;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #d14521;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
 

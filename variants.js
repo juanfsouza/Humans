@@ -18,4 +18,21 @@ export const fadeIn = (direction, delay) => {
       },
     };
   };
+
+  export const slideUp = (delay = 0) => ({
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay,
+        duration: 0.7,
+        ease: 'easeInOut',
+      },
+    },
+  });
+  
   

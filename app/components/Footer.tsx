@@ -1,4 +1,3 @@
-// components/Footer.tsx
 "use client";
 
 const Footer: React.FC = () => {
@@ -14,11 +13,14 @@ const Footer: React.FC = () => {
           <div className="flex items-center">
             <input 
               type="email" 
-              placeholder="Your email..." 
+              placeholder="Seu email..." 
               className="px-4 py-3 text-black rounded-full outline-none focus:ring-2 focus:ring-primary w-64"
             />
-            <button className="ml-4 bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-full font-bold">
-              Subscribe
+            <button className="btn-1 rounded-sm ml-3 px-6 py-3">
+              <span>Enviar</span>
+              <svg>
+                <rect x="0" y="0" width="100%" height="100%"></rect>
+              </svg>
             </button>
           </div>
         </div>
@@ -27,11 +29,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Coluna 1 - Logo e Contagem */}
           <div className="text-center md:text-left">
-            <img src="/logo.png" alt="Logo" className="w-32 mx-auto md:mx-0 mb-4" />
-            <p className="text-gray-400">Total de dinheiro subindo</p>
-            <p className="text-3xl font-bold text-blue-400">$19,825,744</p>
+            <img src="/logoo.png" alt="Logo" className="w-32 mx-auto md:mx-0 mb-4" />
+            <p className="text-gray-400">Total de pessoas que mudaram de vidas</p>
+            <p className="text-3xl font-bold text-primary">325,744</p>
             <button className="mt-4 px-4 py-2 bg-transparent border border-white text-white rounded-full hover:bg-white hover:text-black transition">
-              Donate
+              Saber Mais
             </button>
           </div>
 
@@ -62,7 +64,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Nossa Missão</h4>
             <p className="text-gray-400 mb-4">
-              Uma instituição de caridade é uma organização com objetivos filantrópicos que visam melhorar a qualidade de vida da comunidade e além dela.
+            Um programa de exercícios de medicina de melhores práticas para pessoas com câncer.
             </p>
             <div className="flex space-x-4">
               {/* Ícones de redes sociais */}

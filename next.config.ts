@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // Adiciona a configuração para exportação estática
+  output: 'export', // Exportação estática
   images: {
-    unoptimized: true, // Isso é necessário para que as imagens funcionem corretamente em uma aplicação estática
+    unoptimized: true, // Para imagens no modo exportação
   },
+  trailingSlash: true, // Adiciona uma barra no final das URLs para garantir compatibilidade com roteamento estático
 };
 
 export default nextConfig;

@@ -3,16 +3,22 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion'; 
 import { fadeIn } from '@/variants'; 
+import Image from 'next/image';
 
 const FAQComponent: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   
   return (    
-    <section className="py-16 bg-primary">
+    <section className="py-14 text-white relative h-screen md:h-[820px] overflow-hidden"
+        style={{ 
+          backgroundImage: `url('/footer-bg.png')`,
+          backgroundSize: 'cover',
+        }}
+      >
         <div className="container mx-auto max-w-7xl">
           {/* Depoimentos */}
           <motion.h2 
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
+            className="text-4xl font-bold text-center mb-12"
             variants={fadeIn('up', 0.5)}
             initial='hidden'
             whileInView={'show'}
@@ -67,7 +73,7 @@ const FAQComponent: React.FC = () => {
           {/* FAQ Section */}
           <div className="mt-16">
             <motion.h2 
-              className="text-4xl font-bold text-center text-gray-900 mb-8"
+              className="text-4xl font-bold text-center mb-8"
               variants={fadeIn('up', 1.5)}
               initial='hidden'
               whileInView={'show'}
@@ -107,6 +113,46 @@ const FAQComponent: React.FC = () => {
                     </ul>
                   </motion.div>
                 )}
+              </motion.div>
+
+              <motion.div
+                className="absolute right-0"
+                animate={{ y: [0, 10, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut"
+                }}
+              >
+                <Image
+                  src="/red-dot.png"
+                  alt="Shape 2"
+                  width={250}
+                  height={250}
+                  className="opacity-100"
+                  style={{ transform: 'translate(-0vw, 10vh) rotate(10deg)' }}
+                />
+              </motion.div>
+
+              <motion.div
+                className="absolute right-0"
+                animate={{ y: [0, 10, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut"
+                }}
+              >
+                <Image
+                  src="/ab-shape.png"
+                  alt="Shape 2"
+                  width={250}
+                  height={250}
+                  className="opacity-100"
+                  style={{ transform: 'translate(-85vw, -50vh) rotate(-15deg)' }}
+                />
               </motion.div>
 
               {/* FAQ Item 2 */}
