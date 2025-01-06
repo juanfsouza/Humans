@@ -10,7 +10,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const iconVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.7 },
     visible: { 
       opacity: 1, 
       scale: 1,
