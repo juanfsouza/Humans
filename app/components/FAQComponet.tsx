@@ -95,26 +95,6 @@ const FAQComponent: React.FC = () => {
                   className="w-full text-left text-lg font-semibold text-gray-900 hover:text-primary focus:outline-none"
                   onClick={() => setOpenFAQ(openFAQ === 1 ? null : 1)} // Toggle FAQ
                 >
-                  Por que escolher nosso programa de consultoria de exercícios?
-                </button>
-                {openFAQ === 1 && (
-                  <motion.div
-                    className="mt-4 text-gray-700"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ul className="list-disc ml-5">
-                      <li><strong>Expertise Especializada:</strong> Nossa equipe de Instrutores de Oncologia de Exercício certificados traz amplo conhecimento e expertise à mesa.</li>
-                      <li><strong>Consultas Personalizadas:</strong> Cada consulta é adaptada às necessidades e objetivos individuais do cliente.</li>
-                      <li><strong>Abordagem baseada em evidências:</strong> Nosso programa é baseado nas últimas pesquisas e diretrizes clínicas em oncologia do exercício.</li>
-                      <li><strong>Cuidados Holísticos:</strong> Entendemos que o exercício não é apenas sobre saúde física, mas também sobre bem-estar emocional e mental.</li>
-                      <li><strong>Suporte Contínuo:</strong> Nosso compromisso com você se estende além da consulta.</li>
-                    </ul>
-                  </motion.div>
-                )}
-              </motion.div>
-
               <motion.div
                 className="absolute right-0"
                 animate={{ y: [0, 10, -10, 0] }}
@@ -153,6 +133,25 @@ const FAQComponent: React.FC = () => {
                   className="opacity-100"
                   style={{ transform: 'translate(-85vw, -50vh) rotate(-15deg)' }}
                 />
+              </motion.div>
+                  Por que escolher nosso programa de consultoria de exercícios?
+                </button>
+                {openFAQ === 1 && (
+                  <motion.div
+                    className="mt-4 text-gray-700"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ul className="list-disc ml-5">
+                      <li><strong>Expertise Especializada:</strong> Nossa equipe de Instrutores de Oncologia de Exercício certificados traz amplo conhecimento e expertise à mesa.</li>
+                      <li><strong>Consultas Personalizadas:</strong> Cada consulta é adaptada às necessidades e objetivos individuais do cliente.</li>
+                      <li><strong>Abordagem baseada em evidências:</strong> Nosso programa é baseado nas últimas pesquisas e diretrizes clínicas em oncologia do exercício.</li>
+                      <li><strong>Cuidados Holísticos:</strong> Entendemos que o exercício não é apenas sobre saúde física, mas também sobre bem-estar emocional e mental.</li>
+                      <li><strong>Suporte Contínuo:</strong> Nosso compromisso com você se estende além da consulta.</li>
+                    </ul>
+                  </motion.div>
+                )}
               </motion.div>
 
               {/* FAQ Item 2 */}

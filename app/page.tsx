@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         <div className="relative h-screen md:h-[880px] flex items-center justify-center overflow-hidden">
           {/* Efeito de movimento e zoom na imagem de fundo */}
           <motion.div 
-            className="absolute inset-0"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('/hero-bg.png')` }}
             initial={{ scale: 1.2, y: 50 }}
             animate={{ scale: 1, y: 0 }}
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
           </motion.div>
           
           <motion.div 
-            variants={fadeIn('left', 0.8)}
+            variants={fadeIn('up', 0.8)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.6 }}
@@ -230,7 +230,7 @@ const Home: React.FC = () => {
                 <div className="flex-shrink-0 text-3xl font-bold text-gray-500 relative z-10 group-hover:text-white">01</div>
                 <div className="relative z-10">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-green-500 p-3 rounded-full">
+                    <div className="bg-primary p-3 rounded-full">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
                 <div className="flex-shrink-0 text-3xl font-bold text-gray-500 relative z-10 group-hover:text-white">02</div>
                 <div className="relative z-10">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-green-500 p-3 rounded-full">
+                    <div className="bg-primary p-3 rounded-full">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h4l3 9 4-18 3 9h4" />
                       </svg>
@@ -272,7 +272,7 @@ const Home: React.FC = () => {
                 <div className="flex-shrink-0 text-3xl font-bold text-gray-500 relative z-10 group-hover:text-white">03</div>
                 <div className="relative z-10">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-green-500 p-3 rounded-full">
+                    <div className="bg-primary p-3 rounded-full">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m-3-3H9m3 3v5" />
                       </svg>
@@ -293,7 +293,7 @@ const Home: React.FC = () => {
                 <div className="flex-shrink-0 text-3xl font-bold text-gray-500 relative z-10 group-hover:text-white">04</div>
                 <div className="relative z-10">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-green-500 p-3 rounded-full">
+                    <div className="bg-primary p-3 rounded-full">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7 7 7-7" />
                       </svg>
@@ -447,7 +447,9 @@ const Home: React.FC = () => {
                 ].map((item) => (
                   <div key={item.id} className="group relative flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 border border-gray-200 overflow-hidden">
                     {/* Image with Slide-Up Effect */}
-                    <div className="absolute inset-0 bg-cover bg-center opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition duration-500 ease-out" style={{ backgroundImage: `url(${item.image})` }}></div>
+                    <div className="absolute inset-0 bg-cover bg-center opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition duration-500 ease-out" 
+                      style={{ backgroundImage: `url(${item.image})` }}>
+                    </div>
                     
                     {/* Content */}
                     <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary">
